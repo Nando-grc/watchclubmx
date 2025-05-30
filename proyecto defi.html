@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Club MX - Relojería de Lujo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<!-- Menú off-canvas -->
+    <div id="offcanvas-menu" class="offcanvas">
+        <button id="close-menu">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="./HTML/QUIENES SOMOS.html">Quienes somos</a></li>
+                <li><a href="./HTML/Historia.html">Historia</a></li>
+                <li><a href="./HTML/Historia.html#Gamasdelmercadorelojero:alta,mediayaccesible">Gamas</a></li>
+                <li><a href="./HTML/Nuestros Productos.html">Nuestros productos</a></li>
+                <li><a href="./HTML/Otras casas relojeras.html">Otras casas relojeras</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+    
+         <div class="menu-superior"></div>
+            <button id="menu-button" class="menu-button">☰</button>
+            <nav class="iconos-nav">
+                <ul>
+               <li><a href="#"><i class="fas fa-search"></i></a></li>
+                <li><a href="#"><i class="fas fa-map-marker-alt"></i></a></li>
+                <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                </ul>
+            </nav>
+        <div class="logo-container">
+            <img src="./IMG/icono.webp" alt="Logo Watch Club MX" class="logo">
+        </div>
+        <hr>
+    </header>      
+<section class="video-section">
+  <video autoplay muted loop playsinline class="video-fondo">
+    <source src="./VIDEOS/IMG_1592.MOV" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <div class="video-overlay"></div>
+
+  <div class="video-contenido">
+    <h1>Bienvenido a Watch Club MX</h1>
+    <p>Donde la elegancia y el tiempo se encuentran.</p>
+  </div>
+</section>
+  <section class="mi-aside">
+    <div class="cuadro">
+            <h1> Exploré nuestro catalogo</h> 
+            </div>
+        <div class="Texto-nuestro">
+            <h1> CALIDAD EXCLUSIVA PARA GENTE EXCLUSIVA</h1>
+         <ul>
+            <li><a href="#">ENLACE</a></li>
+         </ul>
+        </div>
+    </section>
+<section class="mi-aside2">
+<div class="tabla-menu">
+    <a href="./HTML/QUIENES SOMOS.html">Quienes somos</a>
+    <a href="./HTML/Historia.html">Historia</a>
+    <a href="./Historia.html#Gamasdelmercadorelojero:alta,mediayaccesible">Gamas</a>
+    <a href="./HTML/Nuestros Productos.html">Nuestros productos</a>
+    <a href="./HTML/Otras casas relojeras.html">Otras casas relojeras</a>
+  </div>
+</section>
+<div class="slider">
+            <img src="./IMG/IMG_1588.JPG" alt="Imagen 1" class="slide activo">
+            <img src="./IMG/IMG_1633.JPG" alt="Imagen 2" class="slide">
+            <img src="./IMG/IMG_5232.JPG" alt="Imagen 3" class="slide">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    <footer class="footer-principal">
+        <div class="footer-contenido">
+          <div class="footer-col">
+            <h4>Compartir</h4>
+            <img src="./IMG/icono.webp" alt="Logo Footer" class="logo-footer">
+            <ul>
+              <li class="idioma-menu">
+  <a href="#">Idiomas ▾</a>
+  <ul class="submenu-idiomas">
+    <li><a href="#" data-lang="es">Español</a></li>
+    <li><a href="#" data-lang="en">English</a></li>
+  </ul>
+</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Redes</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Comunidad</h4>
+            <ul>
+              <li><a href="#">Acerca de</a></li>
+              <li><a href="#">Mantenimiento y cuidado</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="#">Aviso legal</a></li>
+              <li><a href="#">Accesibilidad</a></li>
+              <li><a href="#">Soporte</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-derechos">
+          <p>© 2025 Watch Club MX. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+<script>
+    
+    
+// Banner con Slider
+document.addEventListener("DOMContentLoaded", () => {
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    const next = document.querySelector('.next');
+    const prev = document.querySelector('.prev');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('activo');
+            if (i === index) slide.classList.add('activo');
+        });
+    }
+
+    next.onclick = () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    };
+
+    prev.onclick = () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+    };
+
+    showSlide(current); // Mostrar el primer slide al cargar
+});
+        // Offcanvas menu
+        const offcanvas = document.getElementById("offcanvas-menu");
+        const menuBtn = document.getElementById("menu-button");
+        const closeBtn = document.getElementById("close-menu");
+
+        menuBtn.onclick = () => offcanvas.classList.add("abierto");
+        closeBtn.onclick = () => offcanvas.classList.remove("abierto");
+
+        document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el botón de menú
+    var menuButton = document.getElementById('menu-button');
+    // Sacarlo de su contenedor actual y moverlo al principio del header
+    if (menuButton) {
+        var header = document.querySelector('header');
+        if (header) {
+            // Crear un nuevo contenedor para el botón
+            var buttonContainer = document.createElement('div');
+            buttonContainer.style.position = 'absolute';
+            buttonContainer.style.top = '1em';
+            buttonContainer.style.left = '1em';
+            buttonContainer.style.zIndex = '999';
+            
+            // Clonar el botón y añadirlo al nuevo contenedor
+            var newButton = menuButton.cloneNode(true);
+            buttonContainer.appendChild(newButton);
+            
+            // Añadir el nuevo contenedor al principio del header
+            header.insertBefore(buttonContainer, header.firstChild);
+            
+            // Ocultar el botón original
+            menuButton.style.display = 'none';
+            
+            // Transferir los event listeners
+            newButton.onclick = function() {
+                // Asumiendo que el botón original está configurado para mostrar/ocultar el offcanvas
+                menuButton.click();
+            };
+        }
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Crear el fondo oscuro para el offcanvas
+    var backdrop = document.createElement('div');
+    backdrop.className = 'offcanvas-backdrop';
+    document.body.appendChild(backdrop);
+    
+    // Obtener elementos
+    var menuButton = document.getElementById('menu-button');
+    var offcanvas = document.querySelector('.offcanvas');
+    var closeButton = offcanvas.querySelector('button');
+    
+    // Añadir título al offcanvas
+    var title = document.createElement('h2');
+    title.className = 'offcanvas-title';
+    title.textContent = 'Menú de Navegación';
+    offcanvas.insertBefore(title, offcanvas.firstChild);
+    
+    // Función para abrir el offcanvas
+    function openOffcanvas() {
+        offcanvas.classList.add('abierto');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll en el body
+    }
+    
+    // Función para cerrar el offcanvas
+    function closeOffcanvas() {
+        offcanvas.classList.remove('abierto');
+        document.body.style.overflow = ''; // Restaurar scroll
+    }
+    
+    // Event listeners
+    menuButton.addEventListener('click', openOffcanvas);
+    closeButton.addEventListener('click', closeOffcanvas);
+    backdrop.addEventListener('click', closeOffcanvas);
+    
+    // Cerrar con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && offcanvas.classList.contains('abierto')) {
+            closeOffcanvas();
+        }
+    });
+    
+    // Efecto hover avanzado para los elementos del menú
+    var menuItems = offcanvas.querySelectorAll('nav ul li a');
+    menuItems.forEach(function(item) {
+        item.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s ease';
+        });
+    });
+
+        // Efecto de typing para el título
+        var originalText = titulo.textContent;
+        titulo.textContent = '';
+        var typeSpeed = 100;
+        var i = 0;
+        
+        function typeWriter() {
+            if (i < originalText.length) {
+                titulo.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, typeSpeed);
+            }
+        }
+        
+        // Iniciar efecto de typing después de un breve retraso
+        setTimeout(typeWriter, 800);
+    }
+);
+    </script>
+</body>
