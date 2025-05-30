@@ -1,0 +1,417 @@
+/* Variables de color */
+:root {
+    --oro: #daa520;
+    --blanco: #ffffff;
+    --negro: #000000;
+    }
+
+/* Reset básico */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--blanco);
+    background-color: var(--blanco);
+}
+
+/* Header */
+header {
+    background-color: var(--blanco);
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    width: 100%; /* Aseguramos que ocupe todo el ancho */
+    box-sizing: border-box;
+    
+}header hr {
+  width: 100%;
+  height: 2px;
+  background-color: grey;
+  border: none;
+}
+/*primera imagen con texto*/
+.imagen-section {
+  position: relative;
+  width: 100%;
+  height: 400px; /* puedes ajustar esto */
+  background-image: url('../../IMG/IMG_1585.JPG'); /* tu imagen aquí */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end; /* alinea contenido al fondo */
+  justify-content: center; /* centra horizontalmente */
+  padding-bottom: 2rem; /* espacio del texto al borde inferior */
+  color: white;
+}
+
+.texto-inferior {
+  background: rgba(0, 0, 0, 0.027); /* fondo oscuro semitransparente */
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: 1px 1px 5px black;
+    
+}
+.mi-aside2{
+  flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    background-color: #daa520;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+    border: 5px solid #daa520; /* margen tipo borde izquierdo dorado */
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+/*tabla menu*/
+.tabla-menu {
+      display: flex;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-left: 20px;
+      gap: 10px; /* espacio entre elementos */
+      font-size: 10px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .tabla-menu a {
+     border-left: 5px solid #ffffff;
+     border-right:5px solid #ffffff;
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+      padding: 20px 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .tabla-menu a:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    /*tabla menu*/
+.tabla-inferior {
+     justify-content: center;  /* Centra horizontalmente los <a> */
+  align-items: center;      /* Opcional: centra verticalmente si tiene altura */
+      display: flex;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-left: 20px;
+      font-size: 10px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .tabla-inferior a {
+     border-left: 5px solid #ffffff;
+     border-right:5px solid #ffffff;
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+      padding: 20px 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .tabla-inferior a:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+/* menu plegable */
+.menu-button {
+    /* position: fixed;  ❌ Esto hacía que se mantuviera fijo */
+    position: static;     /* ✅ Ahora sigue el flujo del documento */
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.6em 1em;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1em; /* Opcional: para dar espacio alrededor si lo necesitas */
+}
+.menu-superior {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    text-align: right;
+    width: auto;
+    z-index: 900;
+}
+
+.menu-button:hover {
+    background-color: #daa520;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+/*iconos*/
+.iconos-nav {
+    display: flex;
+    justify-content: flex-end; /* Alinea todo a la derecha */
+    padding-right: 3%;        /* Espacio a la derecha */
+}
+
+.iconos-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.iconos-nav a {
+    font-size: 1.5em;
+    color: black;  /* Color negro */
+    transition: color 0.3s ease;
+}
+
+.iconos-nav a:hover {
+    color: var(--negro); /* O usa otro color para hover */
+}
+/*logo*/
+.logo {
+    width: 75px;
+    margin: 0.5em auto;
+}
+.logo-footer {
+    height: 100px;
+    vertical-align: middle;
+}
+
+/* Off-canvas con diseño mejorado */
+.offcanvas {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Aumentamos el ancho un poco */
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, var(--blanco) 0%, var(--blanco) 100%); /* Gradiente elegante */
+    padding: 2em 1.5em;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación suave con rebote */
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgb(255, 255, 255); /* Sombra para dar profundidad */
+    overflow-y: auto; /* Permitir scroll si el contenido es largo */
+}
+
+.offcanvas.abierto {
+    left: 0;
+    animation: fadeIn 0.5s ease forwards; /* Animación de fade-in */
+}
+
+/* Botón para cerrar el offcanvas */
+.offcanvas button {
+    background: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.8em;
+    color: var(--negro);
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.offcanvas button:hover {
+    background: #daa520;
+    transform: rotate(90deg); /* Efecto de rotación al pasar el mouse */
+}
+
+/* Estilo para los elementos de navegación */
+.offcanvas nav {
+    margin-top: 3em;
+}
+
+.offcanvas nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offcanvas nav ul li {
+    opacity: 0; /* Comienza invisible para animación */
+    transform: translateX(-20px); /* Comienza desplazado */
+    transition: all 0.3s ease;
+}
+
+.offcanvas.abierto nav ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Retraso escalonado para cada elemento del menú */
+.offcanvas nav ul li:nth-child(1) { transition-delay: 0.1s; }
+.offcanvas nav ul li:nth-child(2) { transition-delay: 0.2s; }
+.offcanvas nav ul li:nth-child(3) { transition-delay: 0.3s; }
+.offcanvas nav ul li:nth-child(4) { transition-delay: 0.4s; }
+.offcanvas nav ul li:nth-child(5) { transition-delay: 0.5s; }
+
+.offcanvas nav ul li a {
+    display: block;
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 0.8em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border-left: 0px solid #daa520;
+}
+
+.offcanvas nav ul li a:hover {
+    background: #daa520;
+    padding-left: 1em;
+    border-left: 4px solid var(--negro);
+}
+
+/* Separador decorativo entre elementos */
+.offcanvas nav ul li:not(:last-child) {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+/* Título para el menú */
+.offcanvas-title {
+    color: var(--negro);
+    margin-bottom: 1.5em;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+/* Fondo oscuro para cuando el offcanvas está abierto */
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 999;
+    pointer-events: none;
+    transition: background-color 0.3s ease;
+}
+
+.offcanvas.abierto + .offcanvas-backdrop {
+    background-color: rgb(0, 0, 0);
+    pointer-events: auto;
+}
+ /* Footer */
+footer {
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1em;
+}
+
+.footer-principal {
+    background-color: #daa520;
+    color: black;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col h4 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+}
+
+.logo-footer {
+    max-width: 100px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-derechos {
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+.idioma-menu {
+  position: relative;
+}
+
+.submenu-idiomas {
+  display: none;
+  position: absolute;
+  background-color: white;
+  list-style: none;
+  padding: 0.5em 0;
+  margin: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+}
+
+.submenu-idiomas li {
+  padding: 0;
+}
+
+.submenu-idiomas li a {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.submenu-idiomas li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Mostrar al pasar el mouse */
+.idioma-menu:hover .submenu-idiomas {
+  display: block;
+}
+

@@ -1,0 +1,230 @@
+:root {
+    --color-fondo: #ffffff;
+    --color-texto: #ffffff;
+    --color-dorado: #d4af37;
+    --color-gris: #444;
+    --font-principal: 'Playfair Display', serif;
+    --font-secundaria: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--font-secundaria);
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-principal);
+    font-weight: 700;
+    color: var(--color-dorado);
+}
+
+.cta-button {
+    background-color: var(--color-dorado);
+    color: #000;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+.filtros-container {
+  display: flex;
+    padding: 3rem 1rem;
+    text-align: left;
+}
+
+.filtros {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filtro-btn {
+
+   padding: auto;
+    border: 2px solid var(--color-dorado);
+    color: var(--color-fondo);
+    background: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+.filtro-btn.activo,
+.filtro-btn:hover {
+    background: var(--color-dorado);
+    color: #000;
+}
+
+.productos-destacados {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.carrusel-productos {
+    justify-content: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1rem;
+}
+
+.producto-destacado {
+     display: flex;
+    flex-direction: column; /* 📌 Esto es clave para alinear verticalmente */
+    align-items: center;     /* Centra horizontalmente el contenido */
+    justify-content: center; /* Centra verticalmente si hay altura disponible */
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 15px;
+    min-width: 300px;
+    scroll-snap-align: center;
+    transition: transform 0.3s;
+}
+
+.producto-destacado:hover {
+    transform: scale(1.03);
+}
+
+.producto-imagen img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;             /* Que ocupe todo el ancho del contenedor padre */
+  height: 150px;           /* Alto fijo */
+  object-fit: cover;       /* Recorta lo que sobre y mantiene proporciones */
+  border-radius: 15px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+
+.precio {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: var(--color-dorado);
+}
+
+.etiquetas {
+    margin-top: 0.5rem;
+}
+
+.etiqueta {
+    background: var(--color-gris);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-right: 0.3rem;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.catalogo-productos {
+    padding: 3rem 2rem;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.spinner {
+    border: 6px solid #333;
+    border-top: 6px solid var(--color-dorado);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.servicios {
+    padding: 4rem 2rem;
+    background: #111;
+    text-align: center;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.servicio-icono i {
+    font-size: 2.5rem;
+    color: var(--color-dorado);
+}
+
+.newsletter {
+    background: #1a1a1a;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 0.8rem;
+    border-radius: 25px;
+    border: none;
+    margin-right: 1rem;
+    width: 250px;
+}
+
+.newsletter button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    border: none;
+    background: var(--color-dorado);
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.whatsapp-float i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+ 
